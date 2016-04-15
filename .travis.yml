@@ -1,0 +1,6 @@
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: bash -c './deploy.sh'
+  on:
+    branch: master
