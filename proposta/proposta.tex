@@ -1,0 +1,178 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{iccv}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[brazil]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,
+hmargin={1.5cm,1.5cm},
+vmargin={2cm,2.5cm},
+footskip=5mm]{geometry}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=false,colorlinks,bookmarks=false]{hyperref}
+
+% \iccvfinalcopy % *** Retire o comentário desta linha para gerar a versão da biblioteca (após obter nota acima de 9 em TC2)
+
+\begin{document}
+
+\title{Caracterização Automática de Notícias no Contexto do Mercado de Ações Brasileiro \\ \smallskip
+\small{ PROPOSTA DE TRABALHO DE CONCLUSÃO DE CURSO}}
+
+\author{ \bf Jefferson Heckler Stachelski\\
+    \tt jeffhsta@riseup.net \\
+    Curso de Sistemas de Informação \\
+    Centro Universitário Ritter Dos Reis - UNIRITTER
+    \and
+     \bf Guilherme Lacerda\\
+    Professor Orientador\\
+}
+
+\maketitle
+\thispagestyle{empty}
+
+
+\section{Relevância do trabalho} \label{sec:intro}
+
+Muitos investidores atuam no mercado de ações com o objetivo de realizar investimentos que possam ser rentáveis.
+Neste sentido, uma previsão confiável do comportamento do mercado pode auxiliar os investidores em seus objetivos.
+Contudo, esta não é uma tarefa fácil e ainda não há um método amplamente aceito para prever o movimento dos preços
+das ações~\cite{Schumaker:2010}. Os desafios envolvem a compreensão da dinâmica do mercado, onde parâmetros mudam
+constantemente e muitas vezes se quer estão (são) bem definidos(conhecidos). Por esta razão, a análise do mercado
+de ações tem atraído o interesse da comunidade científica.
+
+A \textit{análise técnica} e a \textit{análise fundamentalista} são duas das principais vertentes no contexto de
+prever o comportamento do mercado financeiro \cite{Brum:acoes}. Basicamente, a análise técnica emprega dados históricos
+de preços no processo de prever o comportamento futuro destes preços, enquanto que a análise fundamentalista baseia-se
+em fatores econômicos que afetam o ramo de atividade das empresas, como indicadores econômicos e quebras de produção.
+Neste contexto, eventos/notícias podem ter grande impacto no comportamento dos preços das ações no mercado e, por esta
+razão, um dos pré-requisitos de um analista de mercado é estar a par de notícias associadas a ramos de atividades de
+uma carteira de investimentos.
+
+Com base no grande e crescente volume de informações que são gerados diariamente nos canais de notícias, se torna
+impraticável para um analista monitorar uma grande quantidade de eventos relativos ao mercado de capitais, sobretudo
+quando este processo deve ocorrer na velocidade das oscilações de preços dos ativos financeiros. Assim, para embasar
+a tomada de decisão sobre títulos transacionados em bolsa de valores, se torna útil o processamento computacional
+prévio destas informações de forma a entregar para o profissional especialista somente as informações relevantes ao contexto de interesse.
+
+No contexto discutido acima são raros os trabalhos que envolvem o mercado nacional e sua suscetibilidade à notícias/eventos.
+Quando o foco é o mercado de ações brasileiro, a literatura apresenta métodos que exploram o histórico de preços das ações
+do ponto de vista de técnicas de análise de séries temporais~\cite{Edgard:Dissertacao}, porém não verificou-se trabalhos
+que visam automatizar a busca por padrões de conteúdo em notícias (texto) como forma de entender o comportamento do mercado de ações.
+
+\section{Objetivos}\label{sec:objetivos}
+
+\subsection{Objetivo geral}
+
+Este trabalho propõe um estudo sobre as potencialidades de métodos clássicos de mineração de texto focado na caracterização
+automática do conteúdo de notícias que impactam no mercado de ações brasileiro.
+
+\subsection{Objetivos específicos}
+
+Entre os objetivos específicos deste trabalho pode-se destacar:
+
+\begin{itemize}
+  \item Avaliar a existência de padrões em notícias que versam sobre o mercado financeiro
+  brasileiro em contextos de alta e baixa de preços.
+  \item Investigar a influência de falsos positivos em dados de treinamento para a classificação
+  supervisionada, uma vez que assume-se que todas as notícias que ocorrem em janelas temporais
+  caracterizadas pela queda de preços são, de fato, notícias que levam a queda destes e vice-versa.
+  \item Prover um estudo inicial sobre a bolsa brasileira no sentido de responder, de forma
+  automatizada, perguntas como \textit{"O quão similar as notícias de hoje são em relação àquelas do passado?"},
+  provendo suporte a decisão para analistas que buscam medir o impacto de determinados eventos sobre um conjunto de ações.
+\end{itemize}
+
+\section{Solução proposta}
+
+Este trabalho visa avaliar o desempenho de uma abordagem \textit{bag-of-words} \cite{Manning:IR}
+para propósitos de descoberta de padrões noticiosos e seus reflexos no mercado de ações brasileiro.
+Especificamente, busca-se avaliar as potencialidades de uma abordagem clássica e difundida de mineração
+de textos para a caracterização/classificação de textos noticiosos em contextos de alta e baixa de
+preços no mercado de ações brasileiro. Neste sentido, avalia-se as potencialidades da abordagem proposta
+para realizar previsões de curto e médio prazo sobre o comportamento do mercado acionário brasileiro.
+
+Os experimentos serão conduzidos sobre uma base textual histórica que contém mais de 5000 notícias
+sobre o mercado do petróleo e do aço no Brasil. Os textos provêm das principais fontes de notícias
+brasileiras que publicam o seu conteúdo na internet, como Boletim Reuters, Correio Braziliense, Isto é Dinheiro,
+O Estado de SP, O Globo, Folha de SP e Valor Econômico. As cotações dos ativos serão obtidas do site da Bovespa,
+que mantém para consulta pública até dez anos de valores de abertura e fechamento de todos os papéis negociados pela entidade.
+
+
+\section{Cronograma de desenvolvimento}\label{sec:cronograma}
+
+\subsection{Trabalho de conclusão de curso I}
+
+A Tabela \ref{tab:cronograma1} apresenta o cronograma de desenvolvimento do trabalho conforme a numeração das atividades abaixo:
+\begin{enumerate}
+  \item Levantamento de dados históricos (documentos e cotações);
+  \item Pré-processamento dos dados históricos, como remoção de \textit{stopwords} e \textit{stemming} \cite{Weiss:textMining,orengo_stemming};
+  \item Estudo sobre as principais técnicas de mineração de textos;
+  \item Levantamento sobre abordagens de mineração de textos voltadas ao mercado de ações;
+  \item Testes preliminares com bibliotecas de mineração de dados;
+  \item Redação do artigo;
+  \item Submissão do artigo para a banca;
+  \item Defesa do trabalho.
+\end{enumerate}
+
+\begin{table}[h]
+\begin{center}
+  \caption{Cronograma de atividades para o trabalho de conclusão I. \label{tab:cronograma1}}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+       \bf Atividade & \bf 7/12 & \bf 8/12 & \bf 9/12 & \bf 10/12 & \bf 11/12 & \bf 12/12  \\  \hline \hline
+           1 & x & x &   &   &   &   \\ \hline
+           2 &   & x & x & x &   &   \\ \hline
+           3 & x & x & x &   &   &   \\ \hline
+           4 & x & x & x & x &   &   \\ \hline
+           5 &   &   &   & x & x &   \\ \hline
+           6 &   &   & x & x & x &   \\ \hline
+           7 &   &   &   &   & x &   \\ \hline
+           8 &   &   &   &   &   & x \\ \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+
+
+\subsection{Trabalho de conclusão de curso II}
+
+A Tabela \ref{tab:cronograma2} apresenta o cronograma de desenvolvimento do trabalho conforme a numeração das atividades abaixo:
+\begin{enumerate}
+  \item Definição do \textit{setup} de experimentos e métricas de validação com base nos trabalhos relacionados;
+  \item Implementação dos experimentos;
+  \item Análise de resultados preliminares e ajuste de melhores configurações de parâmetros para os algoritmos de mineração de texto empregados;
+  \item Análise comparativa dos resultados com relação à trabalhos relacionados;
+  \item Redação do artigo;
+  \item Seminário de andamento;
+  \item Submissão do artigo para a banca;
+  \item Defesa do trabalho.
+\end{enumerate}
+
+\begin{table}[h]
+\begin{center}
+  \caption{Cronograma de atividades para o trabalho de conclusão II. \label{tab:cronograma2}}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+       \bf Atividade & \bf 2/13 & \bf 3/13 & \bf 4/13 & \bf 5/13 & \bf 6/13 & \bf 7/13  \\  \hline \hline
+           1 & x &   &   &   &   &   \\ \hline
+           2 & x & x & x & x &   &   \\ \hline
+           3 &   & x & x & x &   &   \\ \hline
+           4 &   &   & x & x &   &   \\ \hline
+           5 &   &   & x & x & x &   \\ \hline
+           6 &   &   &   & x  &   &   \\ \hline
+           7 &   &   &   &   & x &   \\ \hline
+           8 &   &   &   &   &   & x \\ \hline
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\renewcommand\refname{Referências}
+{\small
+  \bibliographystyle{ieee}
+  \bibliography{referencias}
+}
+
+\end{document}
