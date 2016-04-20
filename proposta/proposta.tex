@@ -66,39 +66,37 @@ processo de criação e configuração de um ambiente de forma mais rapido e men
 
 \subsection{Objetivo geral}
 
-Este trabalho propõe um estudo sobre as potencialidades de métodos clássicos de mineração de texto focado na caracterização
-automática do conteúdo de notícias que impactam no mercado de ações brasileiro.
+Este trabalho propõem um estudo comparativo entre ambientes que são configurados utilizando maquinas virtuais e ambientes
+configurados utilizando containers Docker.
 
 \subsection{Objetivos específicos}
 
 Entre os objetivos específicos deste trabalho pode-se destacar:
 
 \begin{itemize}
-  \item Avaliar a existência de padrões em notícias que versam sobre o mercado financeiro
-    brasileiro em contextos de alta e baixa de preços.
-  \item Investigar a influência de falsos positivos em dados de treinamento para a classificação
-    supervisionada, uma vez que assume-se que todas as notícias que ocorrem em janelas temporais
-    caracterizadas pela queda de preços são, de fato, notícias que levam a queda destes e vice-versa.
-  \item Prover um estudo inicial sobre a bolsa brasileira no sentido de responder, de forma
-    automatizada, perguntas como \textit{"O quão similar as notícias de hoje são em relação àquelas do passado?"},
-    provendo suporte a decisão para analistas que buscam medir o impacto de determinados eventos sobre um conjunto de ações.
+  \item Avaliar a complexidade, recursos consumidos e tempo que leva-se para criar e configurar um ambiente
+    utilizando uma maquina virtual.
+  \item Analizar qual o esforço ao atualizar um componente que é uma dependencia do ambiente.
+  \item Avaliar a complexidade, recursos consumidos e tempo que leva-se para criar e configurar um ambiente
+    utilizando maquina virtual.
+    utilizando containers Docker.
+  \item Analizar qual o esforço ao atualizar um componente que é uma dependencia do ambiente utilizando Docker.
+  \item Prover um estudo inicial através de um questionário sobre a diferença entre automatizar
+    ambientes virtualizados e ambientes sobre containers Docker.
 \end{itemize}
 
 \section{Solução proposta}
 
-Este trabalho visa avaliar o desempenho de uma abordagem \textit{bag-of-words} \cite{Manning:IR}
-para propósitos de descoberta de padrões noticiosos e seus reflexos no mercado de ações brasileiro.
-Especificamente, busca-se avaliar as potencialidades de uma abordagem clássica e difundida de mineração
-de textos para a caracterização/classificação de textos noticiosos em contextos de alta e baixa de
-preços no mercado de ações brasileiro. Neste sentido, avalia-se as potencialidades da abordagem proposta
-para realizar previsões de curto e médio prazo sobre o comportamento do mercado acionário brasileiro.
+Este trabalho visa avaliar os beneficios de utilizar containers Docker como método de automatizar os ambientes
+ao invés do uso de maquinas virtuais. Especificamente, busca-se avaliar a redução de complexidade, desacoplamento dos
+componentes e a queda de uso de recursos do computador ao utilizar a abordagem de containers como ambientes para instalação
+do software.
 
-Os experimentos serão conduzidos sobre uma base textual histórica que contém mais de 5000 notícias
-sobre o mercado do petróleo e do aço no Brasil. Os textos provêm das principais fontes de notícias
-brasileiras que publicam o seu conteúdo na internet, como Boletim Reuters, Correio Braziliense, Isto é Dinheiro,
-O Estado de SP, O Globo, Folha de SP e Valor Econômico. As cotações dos ativos serão obtidas do site da Bovespa,
-que mantém para consulta pública até dez anos de valores de abertura e fechamento de todos os papéis negociados pela entidade.
-
+Os experimentos serão conduzidos através de um formulario com perguntas relacionadas a adoção de containers por um time
+de desenvolvimento de software, cujo adotou a utilização de Docker com a finalidade de melhorar o processo de automação
+de ambientes de desenvolvimento, testes e produção. O questionário será aplicado a um time de pelo menos cinco desenvolvedores,
+as perguntas do forumalário estarão relacionadas a nivel de complexidade, tempo de resposta e recursos utilizados do computador
+antes e após a adoção do Docker no projeto.
 
 \section{Cronograma de desenvolvimento}\label{sec:cronograma}
 
