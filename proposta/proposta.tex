@@ -18,8 +18,8 @@ footskip=5mm]{geometry}
 
 \begin{document}
 
-\title{Caracterização Automática de Notícias no Contexto do Mercado de Ações Brasileiro \\ \smallskip
-\small{ PROPOSTA DE TRABALHO DE CONCLUSÃO DE CURSO}}
+\title{Automação de ambientes utilizando Docker\\ \smallskip
+\small{PROPOSTA DE TRABALHO DE CONCLUSÃO DE CURSO}}
 
 \author{ \bf Jefferson Heckler Stachelski\\
     \tt jeffhsta@riseup.net \\
@@ -35,31 +35,32 @@ footskip=5mm]{geometry}
 
 \section{Relevância do trabalho} \label{sec:intro}
 
-Muitos investidores atuam no mercado de ações com o objetivo de realizar investimentos que possam ser rentáveis.
-Neste sentido, uma previsão confiável do comportamento do mercado pode auxiliar os investidores em seus objetivos.
-Contudo, esta não é uma tarefa fácil e ainda não há um método amplamente aceito para prever o movimento dos preços
-das ações~\cite{Schumaker:2010}. Os desafios envolvem a compreensão da dinâmica do mercado, onde parâmetros mudam
-constantemente e muitas vezes se quer estão (são) bem definidos(conhecidos). Por esta razão, a análise do mercado
-de ações tem atraído o interesse da comunidade científica.
+Muitos desenvolvedores de software trabalham usando o seu computador como ambiente principal para rodar e testar
+o software durante o processo de desenvolvimento do software, assim esse ambiente constuma ser diferente dos ambientes
+dos servidores onde o software irá ser instalado, como os ambientes de desenvolvimento, homologação e produção.
+Com isso em alguns casos ocorrem problemas de imcompatibilidade do software entre os ambientes, geralmente causando
+por versões de sistemas operacionais ou ferramentas diferentes.
 
-A \textit{análise técnica} e a \textit{análise fundamentalista} são duas das principais vertentes no contexto de
-prever o comportamento do mercado financeiro \cite{Brum:acoes}. Basicamente, a análise técnica emprega dados históricos
-de preços no processo de prever o comportamento futuro destes preços, enquanto que a análise fundamentalista baseia-se
-em fatores econômicos que afetam o ramo de atividade das empresas, como indicadores econômicos e quebras de produção.
-Neste contexto, eventos/notícias podem ter grande impacto no comportamento dos preços das ações no mercado e, por esta
-razão, um dos pré-requisitos de um analista de mercado é estar a par de notícias associadas a ramos de atividades de
-uma carteira de investimentos.
+A \textit{automação} e \textit{virtualização} de processos de \textit{configuração de ambientes} e de \textit{deploy} tem
+se tornado uma prática cada vez mais comum. Essa prática acaba minimizando as falhas de imcompatibilidade do software
+nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}. A \textit{virtualização} é uma prática adotada muitas vezes no processo
+de desenvolvimento fazendo com que o software seja desenvolvido e testado sobre esse ambiente virtualizado, afim de
+que mantenha-se a compatibilidade com o ambiente de produção. Com a \textit{virtualição} no processo de desenvolvimento
+acaba-se reduzindo alguns riscos e até mesmo facilitando quando há alguma mudança no ambiente de produção, por exemplo
+uma atualização de uma biblioteca ou qualquer outra dependencia do software\cite{Fowler_continuos_integration}.
 
-Com base no grande e crescente volume de informações que são gerados diariamente nos canais de notícias, se torna
-impraticável para um analista monitorar uma grande quantidade de eventos relativos ao mercado de capitais, sobretudo
-quando este processo deve ocorrer na velocidade das oscilações de preços dos ativos financeiros. Assim, para embasar
-a tomada de decisão sobre títulos transacionados em bolsa de valores, se torna útil o processamento computacional
-prévio destas informações de forma a entregar para o profissional especialista somente as informações relevantes ao contexto de interesse.
+Porém o consumo de recursos do computador tem se mostrado muito elevado para possuir esse ambiente virtualizado,
+além de o processo de configuração desse ambiente ser muitas vezes demorado, de acordo com a complexidade e
+o número de dependencies que esse possui. Como alternativa a \textit{virtualização} temos \textit{containers}.
+\textit{Containers} é o mecanismo utilizado pela ferramente chamada \textit{Docker}, que ao invés de virtualizar
+um sistema operacional, esse mecanismo utiliza muitos dos componentes ja existentes no computador, e executa
+outros componentes a fim de isolar os processos executados dentro do container\cite{TW_docker_for_builds}, fazendo assim essa uma alternativa,
+mais rápida e que consume menos recursos do computador.
 
-No contexto discutido acima são raros os trabalhos que envolvem o mercado nacional e sua suscetibilidade à notícias/eventos.
-Quando o foco é o mercado de ações brasileiro, a literatura apresenta métodos que exploram o histórico de preços das ações
-do ponto de vista de técnicas de análise de séries temporais~\cite{Edgard:Dissertacao}, porém não verificou-se trabalhos
-que visam automatizar a busca por padrões de conteúdo em notícias (texto) como forma de entender o comportamento do mercado de ações.
+No contexto abordado acima são raros os trabalhos que apontam a vantagem do uso do \textit{Docker} como uma solução
+alternativa a \textit{virtualização}\cite{Jafari_infra_as_a_code}. Quando trata-se desse tópico geralmente são discutidos ferramentas de automação
+que criam uma maquina virtual e a configuram, quando que esse processo pode possuir menos tarefas repetitivas e um
+processo de criação e configuração de um ambiente de forma mais rapido e menos complexa.
 
 \section{Objetivos}\label{sec:objetivos}
 
@@ -74,13 +75,13 @@ Entre os objetivos específicos deste trabalho pode-se destacar:
 
 \begin{itemize}
   \item Avaliar a existência de padrões em notícias que versam sobre o mercado financeiro
-  brasileiro em contextos de alta e baixa de preços.
+    brasileiro em contextos de alta e baixa de preços.
   \item Investigar a influência de falsos positivos em dados de treinamento para a classificação
-  supervisionada, uma vez que assume-se que todas as notícias que ocorrem em janelas temporais
-  caracterizadas pela queda de preços são, de fato, notícias que levam a queda destes e vice-versa.
+    supervisionada, uma vez que assume-se que todas as notícias que ocorrem em janelas temporais
+    caracterizadas pela queda de preços são, de fato, notícias que levam a queda destes e vice-versa.
   \item Prover um estudo inicial sobre a bolsa brasileira no sentido de responder, de forma
-  automatizada, perguntas como \textit{"O quão similar as notícias de hoje são em relação àquelas do passado?"},
-  provendo suporte a decisão para analistas que buscam medir o impacto de determinados eventos sobre um conjunto de ações.
+    automatizada, perguntas como \textit{"O quão similar as notícias de hoje são em relação àquelas do passado?"},
+    provendo suporte a decisão para analistas que buscam medir o impacto de determinados eventos sobre um conjunto de ações.
 \end{itemize}
 
 \section{Solução proposta}
@@ -116,21 +117,21 @@ A Tabela \ref{tab:cronograma1} apresenta o cronograma de desenvolvimento do trab
 \end{enumerate}
 
 \begin{table}[h]
-\begin{center}
-  \caption{Cronograma de atividades para o trabalho de conclusão I. \label{tab:cronograma1}}
+  \begin{center}
+    \caption{Cronograma de atividades para o trabalho de conclusão I. \label{tab:cronograma1}}
     \begin{tabular}{|c|c|c|c|c|c|c|}
       \hline
-       \bf Atividade & \bf 7/12 & \bf 8/12 & \bf 9/12 & \bf 10/12 & \bf 11/12 & \bf 12/12  \\  \hline \hline
-           1 & x & x &   &   &   &   \\ \hline
-           2 &   & x & x & x &   &   \\ \hline
-           3 & x & x & x &   &   &   \\ \hline
-           4 & x & x & x & x &   &   \\ \hline
-           5 &   &   &   & x & x &   \\ \hline
-           6 &   &   & x & x & x &   \\ \hline
-           7 &   &   &   &   & x &   \\ \hline
-           8 &   &   &   &   &   & x \\ \hline
+      \bf Atividade & \bf 7/12 & \bf 8/12 & \bf 9/12 & \bf 10/12 & \bf 11/12 & \bf 12/12  \\  \hline \hline
+      1 & x & x &   &   &   &   \\ \hline
+      2 &   & x & x & x &   &   \\ \hline
+      3 & x & x & x &   &   &   \\ \hline
+      4 & x & x & x & x &   &   \\ \hline
+      5 &   &   &   & x & x &   \\ \hline
+      6 &   &   & x & x & x &   \\ \hline
+      7 &   &   &   &   & x &   \\ \hline
+      8 &   &   &   &   &   & x \\ \hline
     \end{tabular}
-    \end{center}
+  \end{center}
 \end{table}
 
 \subsection{Trabalho de conclusão de curso II}
@@ -148,21 +149,21 @@ A Tabela \ref{tab:cronograma2} apresenta o cronograma de desenvolvimento do trab
 \end{enumerate}
 
 \begin{table}[h]
-\begin{center}
-  \caption{Cronograma de atividades para o trabalho de conclusão II. \label{tab:cronograma2}}
+  \begin{center}
+    \caption{Cronograma de atividades para o trabalho de conclusão II. \label{tab:cronograma2}}
     \begin{tabular}{|c|c|c|c|c|c|c|}
       \hline
-       \bf Atividade & \bf 2/13 & \bf 3/13 & \bf 4/13 & \bf 5/13 & \bf 6/13 & \bf 7/13  \\  \hline \hline
-           1 & x &   &   &   &   &   \\ \hline
-           2 & x & x & x & x &   &   \\ \hline
-           3 &   & x & x & x &   &   \\ \hline
-           4 &   &   & x & x &   &   \\ \hline
-           5 &   &   & x & x & x &   \\ \hline
-           6 &   &   &   & x  &   &   \\ \hline
-           7 &   &   &   &   & x &   \\ \hline
-           8 &   &   &   &   &   & x \\ \hline
+      \bf Atividade & \bf 2/13 & \bf 3/13 & \bf 4/13 & \bf 5/13 & \bf 6/13 & \bf 7/13  \\  \hline \hline
+      1 & x &   &   &   &   &   \\ \hline
+      2 & x & x & x & x &   &   \\ \hline
+      3 &   & x & x & x &   &   \\ \hline
+      4 &   &   & x & x &   &   \\ \hline
+      5 &   &   & x & x & x &   \\ \hline
+      6 &   &   &   & x  &   &   \\ \hline
+      7 &   &   &   &   & x &   \\ \hline
+      8 &   &   &   &   &   & x \\ \hline
     \end{tabular}
-    \end{center}
+  \end{center}
 \end{table}
 
 \renewcommand\refname{Referências}
