@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir -p ~/.ssh
-openssl aes-256-cbc -K $encrypted_9d680ccc9428_key -iv $encrypted_9d680ccc9428_iv -in .ssh/id_rsa.enc -out ~/.ssh/id_rsa -d
-chmod 600 ~/.ssh/id_rsa
+# mkdir -p ~/.ssh
+# echo $SSH_KEY > ~/.ssh/id_rsa
+# chmod 600 ~/.ssh/id_rsa
 
 CHECK_BRANCH=`git branch --all | grep gh-pages`
 
