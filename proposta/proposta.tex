@@ -36,38 +36,43 @@ footskip=5mm]{geometry}
 \section{Relevância do trabalho} \label{sec:intro}
 
 Muitos desenvolvedores de software trabalham usando o seu computador como ambiente principal para rodar e testar
-o software durante o processo de desenvolvimento do software, assim esse ambiente constuma ser diferente dos ambientes
+o software durante o processo de desenvolvimento do software. Assim esse ambiente constuma ser diferente dos ambientes
 dos servidores onde o software irá ser instalado, como os ambientes de desenvolvimento, homologação e produção.
 Com isso em alguns casos ocorrem problemas de imcompatibilidade do software entre os ambientes, geralmente causando
-por versões de sistemas operacionais ou ferramentas diferentes.
+por versões de sistemas operacionais ou ferramentas diferentes. O uso de containers por desenvolvedores é de apenas
+17\%, 56\% estão considerando a adoção da prática e 27\% não utilizam e não possuem planos de adoção\cite{DZone_CD_guide_v3}.
 
 A \textit{automação} e \textit{virtualização} de processos de \textit{configuração de ambientes} e de \textit{deploy} tem
-se tornado uma prática cada vez mais comum. Essa prática acaba minimizando as falhas de imcompatibilidade do software
-nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}. A \textit{virtualização} é uma prática adotada muitas vezes no processo
-de desenvolvimento fazendo com que o software seja desenvolvido e testado sobre esse ambiente virtualizado, afim de
-que mantenha-se a compatibilidade com o ambiente de produção. Com a \textit{virtualição} no processo de desenvolvimento
-acaba-se reduzindo alguns riscos e até mesmo facilitando quando há alguma mudança no ambiente de produção, por exemplo
-uma atualização de uma biblioteca ou qualquer outra dependencia do software\cite{Fowler_continuos_integration}.
+se tornado uma prática cada vez mais comum\cite{DZone_CD_guide_v3}. Essa prática acaba minimizando as falhas de imcompatibilidade do software
+nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}. A \textit{virtualização} é uma prática
+adotada muitas vezes no processo de desenvolvimento fazendo com que o software seja desenvolvido e testado sobre
+esse ambiente virtualizado, afim de que mantenha-se a compatibilidade com o ambiente de produção. Com a
+\textit{virtualização} no processo de desenvolvimento acaba-se reduzindo alguns riscos e até mesmo facilitando
+quando há alguma mudança no ambiente de produção, por exemplo uma atualização de uma biblioteca ou qualquer
+outra dependencia do software\cite{Fowler_continuos_integration}.
 
 Porém o consumo de recursos do computador tem se mostrado muito elevado para possuir esse ambiente virtualizado,
 além de o processo de configuração desse ambiente ser muitas vezes demorado, de acordo com a complexidade e
-o número de dependencies que esse possui. Como alternativa a \textit{virtualização} temos \textit{containers}.
+o número de dependências que esse possui. Como alternativa a \textit{virtualização} temos \textit{containers}.
 \textit{Containers} é o mecanismo utilizado pela ferramente chamada \textit{Docker}, que ao invés de virtualizar
 um sistema operacional, esse mecanismo utiliza muitos dos componentes ja existentes no computador, e executa
-outros componentes a fim de isolar os processos executados dentro do container\cite{TW_docker_for_builds}, fazendo assim essa uma alternativa,
-mais rápida e que consume menos recursos do computador.
+outros componentes a fim de isolar os processos executados dentro do container\cite{TW_docker_for_builds},
+fazendo assim essa uma alternativa, mais rápida e que consume menos recursos do computador\cite{DZone_CD_guide_v3}.
+Um bom caso de exemplo seria um ambiente onde estão rodando \textit{microservices}, cujos são compostoso por
+outros serviços externos, no qual cada \textit{microservice} deve ser resiliente, flexivel, mínimo e completo
+\cite{Bugwadia_arch_constrains}.
 
 No contexto abordado acima são raros os trabalhos que apontam a vantagem do uso do \textit{Docker} como uma solução
-alternativa a \textit{virtualização}\cite{Jafari_infra_as_a_code}. Quando trata-se desse tópico geralmente são discutidos ferramentas de automação
-que criam uma maquina virtual e a configuram, quando que esse processo pode possuir menos tarefas repetitivas e um
-processo de criação e configuração de um ambiente de forma mais rapido e menos complexa.
+alternativa a \textit{virtualização}\cite{Jafari_infra_as_a_code}. Quando trata-se desse tópico geralmente são
+discutidos ferramentas de automação que criam uma maquina virtual e a configuram, quando que esse processo
+pode possuir menos tarefas repetitivas e um processo de criação e configuração de um ambiente de forma mais rapido e menos complexa.
 
 \section{Objetivos}\label{sec:objetivos}
 
 \subsection{Objetivo geral}
 
-Este trabalho propõem um estudo comparativo entre ambientes que são configurados utilizando maquinas virtuais e ambientes
-configurados utilizando containers Docker.
+Este trabalho propõem um estudo de caso da aplicação do Docker em aplicação corporativa analisando os aspectos
+de performance, segurança, isolamento, tempo de liberação compado maquinas virtuais.
 
 \subsection{Objetivos específicos}
 
