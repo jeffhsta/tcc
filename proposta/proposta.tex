@@ -43,13 +43,15 @@ por versões de sistemas operacionais ou ferramentas diferentes. O uso de contai
 17\%, 56\% estão considerando a adoção da prática e 27\% não utilizam e não possuem planos de adoção\cite{DZone_CD_guide_v3}.
 
 A \textit{automação} e \textit{virtualização} de processos de \textit{configuração de ambientes} e de \textit{deploy} tem
-se tornado uma prática cada vez mais comum\cite{DZone_CD_guide_v3}. Essa prática acaba minimizando as falhas de imcompatibilidade do software
-nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}. A \textit{virtualização} é uma prática
-adotada muitas vezes no processo de desenvolvimento fazendo com que o software seja desenvolvido e testado sobre
-esse ambiente virtualizado, afim de que mantenha-se a compatibilidade com o ambiente de produção. Com a
-\textit{virtualização} no processo de desenvolvimento acaba-se reduzindo alguns riscos e até mesmo facilitando
-quando há alguma mudança no ambiente de produção, por exemplo uma atualização de uma biblioteca ou qualquer
-outra dependencia do software\cite{Fowler_continuos_integration}.
+se tornado uma prática cada vez mais comum\cite{DZone_CD_guide_v3}. Essa prática acaba minimizando as falhas de
+imcompatibilidade do software nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}.
+A \textit{virtualização} é uma prática adotada muitas vezes no processo de desenvolvimento fazendo com que o
+software seja desenvolvido e testado sobre esse ambiente virtualizado, afim de que mantenha-se a compatibilidade
+com o ambiente de produção, em muitos casos usa-se ferramentas de provisionamento do ambiente em maquinas virtuais
+como por exemplo \textit{Cheff}, \textit{Puppet} entre outros\cite{Fowler_infra_as_code}. Com a \textit{virtualização}
+no processo de desenvolvimento acaba-se reduzindo alguns riscos e até mesmo facilitando quando há alguma mudança
+no ambiente de produção, por exemplo uma atualização de uma biblioteca ou qualquer outra dependencia do
+software\cite{Fowler_continuos_integration}.
 
 Porém o consumo de recursos do computador tem se mostrado muito elevado para possuir esse ambiente virtualizado,
 além de o processo de configuração desse ambiente ser muitas vezes demorado, de acordo com a complexidade e
@@ -65,7 +67,8 @@ outros serviços externos, no qual cada \textit{microservice} deve ser resilient
 No contexto abordado acima são raros os trabalhos que apontam a vantagem do uso do \textit{Docker} como uma solução
 alternativa a \textit{virtualização}\cite{Jafari_infra_as_a_code}. Quando trata-se desse tópico geralmente são
 discutidos ferramentas de automação que criam uma maquina virtual e a configuram, quando que esse processo
-pode possuir menos tarefas repetitivas e um processo de criação e configuração de um ambiente de forma mais rapido e menos complexa.
+pode possuir menos tarefas repetitivas e um processo de criação e configuração de um ambiente de forma mais
+rapido e menos complexa.
 
 \section{Objetivos}\label{sec:objetivos}
 
