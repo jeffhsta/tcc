@@ -79,7 +79,7 @@ rapido e menos complexa.
 Este trabalho propõem um estudo de caso da aplicação do \textit{Docker} em aplicação corporativa analisando os aspectos
 de performance, segurança, isolamento, tempo de liberação compado maquinas virtuais.
 
-\subsection{Objetivos específicos}
+\subsection{Objetivos específicos}\label{sec:objetivos_especificos}
 
 Entre os objetivos específicos deste trabalho pode-se destacar:
 
@@ -89,8 +89,8 @@ Entre os objetivos específicos deste trabalho pode-se destacar:
     mas utilizadas pelas empresas.
   \item Estudar o \textit{Docker} a nivel prático, entender como funciona a ferramenta e quais são os
     recursos e funcionalidades disponiveis.
-  \item Criar uma aplicação web simples, contendo poucas páginas, mas com dependencia de pelo menos duas
-    aplicações externas.
+  \item Criar uma aplicação web simples, contendo pelo menos uma página dinâmica, mas com dependencia
+    de pelo menos duas aplicações externas.
   \item Automatizar a criação do ambiente do projeto citado acima utilizando uma ferramenta de virtualização
     previamente estudada.
   \item Automatizar a criação do ambiente como citado no item acima, porém utilizando o \textit{Docker}. Possuindo
@@ -151,12 +151,13 @@ A Tabela \ref{tab:cronograma1} apresenta o cronograma de desenvolvimento do trab
 
 A Tabela \ref{tab:cronograma2} apresenta o cronograma de desenvolvimento do trabalho conforme a numeração das atividades abaixo:
 \begin{enumerate}
-  \item Definição do \textit{setup} de experimentos e métricas de validação com base nos trabalhos relacionados;
-  \item Implementação dos experimentos;
-  \item Análise de resultados preliminares e ajuste de melhores configurações de parâmetros para os algoritmos de mineração de texto empregados;
+  \item Definição das ferramentas que serão utilizadas para virtualização e provisionamento;
+  \item Implementação da aplicação de demonstração com algumas dependências (como descrito nos objectivos
+    específicos\ref{sec:objetivos_especificos});
+  \item Implementação do processo automatizado de provisionamento do ambiente virtuzalido;
+  \item Implementação do processo automatizado de provisionamento do ambiente utilizando \textit{Docker};
   \item Análise comparativa dos resultados com relação à trabalhos relacionados;
   \item Redação do artigo;
-  \item Seminário de andamento;
   \item Submissão do artigo para a banca;
   \item Defesa do trabalho.
 \end{enumerate}
@@ -166,13 +167,13 @@ A Tabela \ref{tab:cronograma2} apresenta o cronograma de desenvolvimento do trab
     \caption{Cronograma de atividades para o trabalho de conclusão II. \label{tab:cronograma2}}
     \begin{tabular}{|c|c|c|c|c|c|c|}
       \hline
-      \bf Atividade & \bf 2/13 & \bf 3/13 & \bf 4/13 & \bf 5/13 & \bf 6/13 & \bf 7/13  \\  \hline \hline
-      1 & x &   &   &   &   &   \\ \hline
+      \bf Atividade & \bf 7/16 & \bf 8/16 & \bf 9/16 & \bf 10/16 & \bf 11/16 & \bf 12/16  \\  \hline \hline
+      1 & x & x &   &   &   &   \\ \hline
       2 & x & x & x & x &   &   \\ \hline
-      3 &   & x & x & x &   &   \\ \hline
-      4 &   &   & x & x &   &   \\ \hline
-      5 &   &   & x & x & x &   \\ \hline
-      6 &   &   &   & x  &   &   \\ \hline
+      3 &   & x & x & x & x &   \\ \hline
+      4 &   &   & x & x & x &   \\ \hline
+      5 &   &   &   & x & x &   \\ \hline
+      6 &   &   & x & x & x &   \\ \hline
       7 &   &   &   &   & x &   \\ \hline
       8 &   &   &   &   &   & x \\ \hline
     \end{tabular}
