@@ -62,7 +62,9 @@ outros componentes a fim de isolar os processos executados dentro do container\c
 fazendo assim essa uma alternativa, mais rápida e que consume menos recursos do computador\cite{DZone_CD_guide_v3}.
 Um bom caso de exemplo seria um ambiente onde estão rodando \textit{microservices}, cujos são compostoso por
 outros serviços externos, no qual cada \textit{microservice} deve ser resiliente, flexivel, mínimo e completo
-\cite{Bugwadia_arch_constrains}.
+\cite{Bugwadia_arch_constrains}. \textit{Docker} torna-se util também em cenários onde aplicações dependem umas
+das outras, mas po algum motivo elas executão em diferentes versões de linguagens, biblioteca ou outra dependencia,
+podendo rodar isoladamente cada aplicação em diferentes \textit{containers}\cite{Merkel_Docker}.
 
 No contexto abordado acima são raros os trabalhos que apontam a vantagem do uso do \textit{Docker} como uma solução
 alternativa a \textit{virtualização}\cite{Jafari_infra_as_a_code}. Quando trata-se desse tópico geralmente são
