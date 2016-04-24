@@ -35,30 +35,30 @@ footskip=5mm]{geometry}
 
 \section{Relevância do trabalho} \label{sec:intro}
 
-Muitos desenvolvedores de software trabalham usando o seu computador como ambiente principal para rodar e testar
-o software durante o processo de desenvolvimento do software. Assim esse ambiente constuma ser diferente dos ambientes
-dos servidores onde o software irá ser instalado, como os ambientes de desenvolvimento, homologação e produção.
-Com isso em alguns casos ocorrem problemas de imcompatibilidade do software entre os ambientes, geralmente causando
-por versões de sistemas operacionais ou ferramentas diferentes. O uso de containers por desenvolvedores é de apenas
+Muitos desenvolvedores de \textit{software} trabalham usando o seu computador como ambiente principal para rodar e testar
+o \textit{software} durante o processo de desenvolvimento do \textit{software}. Assim esse ambiente constuma ser diferente dos ambientes
+dos servidores onde o \textit{software} irá ser instalado, como os ambientes de desenvolvimento, homologação e produção.
+Com isso em alguns casos ocorrem problemas de imcompatibilidade do \textit{software} entre os ambientes, geralmente causando
+por versões de sistemas operacionais ou ferramentas diferentes. O uso de \textit{containers} por desenvolvedores é de apenas
 17\%, 56\% estão considerando a adoção da prática e 27\% não utilizam e não possuem planos de adoção\cite{DZone_CD_guide_v3}.
 
 A \textit{automação} e \textit{virtualização} de processos de \textit{configuração de ambientes} e de \textit{deploy} tem
 se tornado uma prática cada vez mais comum\cite{DZone_CD_guide_v3}. Essa prática acaba minimizando as falhas de
-imcompatibilidade do software nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}.
+imcompatibilidade do \textit{software} nos ambientes no qual esse é implantado\cite{Fowler_continuos_integration}.
 A \textit{virtualização} é uma prática adotada muitas vezes no processo de desenvolvimento fazendo com que o
-software seja desenvolvido e testado sobre esse ambiente virtualizado, afim de que mantenha-se a compatibilidade
+\textit{software} seja desenvolvido e testado sobre esse ambiente virtualizado, afim de que mantenha-se a compatibilidade
 com o ambiente de produção, em muitos casos usa-se ferramentas de provisionamento do ambiente em maquinas virtuais
 como por exemplo \textit{Cheff}, \textit{Puppet} entre outros\cite{Fowler_infra_as_code}. Com a \textit{virtualização}
 no processo de desenvolvimento acaba-se reduzindo alguns riscos e até mesmo facilitando quando há alguma mudança
 no ambiente de produção, por exemplo uma atualização de uma biblioteca ou qualquer outra dependencia do
-software\cite{Fowler_continuos_integration}.
+\textit{software}\cite{Fowler_continuos_integration}.
 
 Porém o consumo de recursos do computador tem se mostrado muito elevado para possuir esse ambiente virtualizado,
 além de o processo de configuração desse ambiente ser muitas vezes demorado, de acordo com a complexidade e
 o número de dependências que esse possui. Como alternativa a \textit{virtualização} temos \textit{containers}.
 \textit{Containers} é o mecanismo utilizado pela ferramente chamada \textit{Docker}, que ao invés de virtualizar
 um sistema operacional, esse mecanismo utiliza muitos dos componentes ja existentes no computador, e executa
-outros componentes a fim de isolar os processos executados dentro do container\cite{TW_docker_for_builds},
+outros componentes a fim de isolar os processos executados dentro do \textit{container}\cite{TW_docker_for_builds},
 fazendo assim essa uma alternativa, mais rápida e que consume menos recursos do computador\cite{DZone_CD_guide_v3}.
 Um bom caso de exemplo seria um ambiente onde estão rodando \textit{microservices}, cujos são compostoso por
 outros serviços externos, no qual cada \textit{microservice} deve ser resiliente, flexivel, mínimo e completo
@@ -76,7 +76,7 @@ rapido e menos complexa.
 
 \subsection{Objetivo geral}
 
-Este trabalho propõem um estudo de caso da aplicação do Docker em aplicação corporativa analisando os aspectos
+Este trabalho propõem um estudo de caso da aplicação do \textit{Docker} em aplicação corporativa analisando os aspectos
 de performance, segurança, isolamento, tempo de liberação compado maquinas virtuais.
 
 \subsection{Objetivos específicos}
@@ -84,29 +84,36 @@ de performance, segurança, isolamento, tempo de liberação compado maquinas vi
 Entre os objetivos específicos deste trabalho pode-se destacar:
 
 \begin{itemize}
-  \item Avaliar a complexidade, recursos consumidos e tempo que leva-se para criar e configurar um ambiente
-    utilizando uma maquina virtual.
-  \item Analizar qual o esforço ao atualizar um componente que é uma dependencia do ambiente.
-  \item Avaliar a complexidade, recursos consumidos e tempo que leva-se para criar e configurar um ambiente
-    utilizando maquina virtual.
-    utilizando containers Docker.
-  \item Analizar qual o esforço ao atualizar um componente que é uma dependencia do ambiente utilizando Docker.
+  \item Estudar as ferramentas de virtualização de \textit{software}, como por exemplo,
+    VirtualBox, VWare, Hypervision entre outros. Conhecer as ferramentas existentes no mercado e as
+    mas utilizadas pelas empresas.
+  \item Estudar o \textit{Docker} a nivel prático, entender como funciona a ferramenta e quais são os
+    recursos e funcionalidades disponiveis.
+  \item Criar uma aplicação web simples, contendo poucas páginas, mas com dependencia de pelo menos duas
+    aplicações externas.
+  \item Automatizar a criação do ambiente do projeto citado acima utilizando uma ferramenta de virtualização
+    previamente estudada.
+  \item Automatizar a criação do ambiente como citado no item acima, porém utilizando o \textit{Docker}. Possuindo
+    assim um cenário onde simula-se a migração de um ambiente virtualizado para utilização de \textit{containers}
   \item Prover um estudo inicial através de um questionário sobre a diferença entre automatizar
-    ambientes virtualizados e ambientes sobre containers Docker.
+    ambientes com ferramentas de virtualização e ambientes com \textit{Docker}. Esse questionário será aplicado
+    a desenvolvedores com algum nivel de expericência em \textit{Docker} a fim de prover obter uma visão geral
+    do \textit{Docker} pelos profissionais da area de desenvolvimento de \textit{software}.
 \end{itemize}
 
 \section{Solução proposta}
 
-Este trabalho visa avaliar os beneficios de utilizar containers Docker como método de automatizar os ambientes
-ao invés do uso de maquinas virtuais. Especificamente, busca-se avaliar a redução de complexidade, desacoplamento dos
-componentes e a queda de uso de recursos do computador ao utilizar a abordagem de containers como ambientes para instalação
-do software.
+Este trabalho visa avaliar os beneficios de utilizar \textit{containers} \textit{Docker} como método de automatizar
+os ambientes ao invés do uso de maquinas virtuais. Esse trabalho difere-se de \textit{Performance comparison
+analysis of linux container and virtual machine for building cloud}\cite{Performance_container_vm}, pois expecificamente
+busca-se avaliar a redução de complexidade, desacoplamento dos componentes e a queda de uso de recursos do computador
+ao utilizar a abordagem de \textit{containers} como base de provisionamento do ambiente de uma aplicação corporativa.
 
-Os experimentos serão conduzidos através de um formulario com perguntas relacionadas a adoção de containers por um time
-de desenvolvimento de software, cujo adotou a utilização de Docker com a finalidade de melhorar o processo de automação
+Os experimentos serão conduzidos através de um formulario com perguntas relacionadas a adoção de \textit{containers} por um time
+de desenvolvimento de \textit{software}, cujo adotou a utilização de \textit{Docker} com a finalidade de melhorar o processo de automação
 de ambientes de desenvolvimento, testes e produção. O questionário será aplicado a um time de pelo menos cinco desenvolvedores,
 as perguntas do forumalário estarão relacionadas a nivel de complexidade, tempo de resposta e recursos utilizados do computador
-antes e após a adoção do Docker no projeto.
+antes e após a adoção do \textit{Docker} no projeto.
 
 \section{Cronograma de desenvolvimento}\label{sec:cronograma}
 
@@ -114,7 +121,7 @@ antes e após a adoção do Docker no projeto.
 
 A Tabela \ref{tab:cronograma1} apresenta o cronograma de desenvolvimento do trabalho conforme a numeração das atividades abaixo:
 \begin{enumerate}
-  \item Levantamento das variaveis que diferenciam utilização de maquinas virtuais e containers;
+  \item Levantamento das variaveis que diferenciam utilização de maquinas virtuais e \textit{containers};
   \item Elaboração do formulário com as perguntas relavantes com base no item acima;
   \item Validação do formulário elaborado com o orientador e desenvolvedores a fim de coletar feedbacks;
   \item Elaboração da versão final do formulário;
