@@ -1,0 +1,40 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{Bugwadia_arch_constrains}
+J.~Bugwadia.
+\newblock Microservices: Five architectural constraints, 2015.
+
+\bibitem{DZone_CD_guide_v3}
+J.~Esposito.
+\newblock The dzone guide to continuous delivery volume iii, 2016.
+
+\bibitem{Fowler_continuos_integration}
+M.~Fowler.
+\newblock Continuous integration.
+\newblock 2006.
+
+\bibitem{Fowler_infra_as_code}
+M.~Fowler.
+\newblock Infrastructure as code, 2016.
+
+\bibitem{Merkel_Docker}
+D.~Merkel.
+\newblock Docker: Lightweight linux containers for consistent development and
+  deployment.
+\newblock {\em Linux J.}, 2014(239), Mar. 2014.
+
+\bibitem{Performance_container_vm}
+K.-T. Seo, H.~Hwang, I.~Moon, O.~Kwon, and B.~Kim.
+\newblock Performance comparison analysis of linux container and virtual
+  machine for building cloud.
+\newblock {\em Advanced Science and Technology Letters}, 66:105--111, 2014.
+
+\bibitem{Jafari_infra_as_a_code}
+J.~Sitakange.
+\newblock Infrastructure as code: A reason to smile, 2014.
+
+\bibitem{TW_docker_for_builds}
+ThoughtWorks.
+\newblock Docker for builds, 2015.
+
+\end{thebibliography}

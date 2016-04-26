@@ -66,7 +66,7 @@ outros serviços externos, no qual cada \textit{microservice} deve ser resilient
 das outras, mas po algum motivo elas executão em diferentes versões de linguagens, biblioteca ou outra dependencia,
 podendo rodar isoladamente cada aplicação em diferentes \textit{containers}\cite{Merkel_Docker}.
 
-No contexto abordado acima são raros os trabalhos que apontam a vantagem do uso do \textit{Docker} como uma solução
+No contexto abordado acima, é uma área emergente de trabalhos que apontam a vantagem do uso do \textit{Docker} como uma solução
 alternativa a \textit{virtualização}\cite{Jafari_infra_as_a_code}. Quando trata-se desse tópico geralmente são
 discutidos ferramentas de automação que criam uma maquina virtual e a configuram, quando que esse processo
 pode possuir menos tarefas repetitivas e um processo de criação e configuração de um ambiente de forma mais
@@ -76,8 +76,8 @@ rapido e menos complexa.
 
 \subsection{Objetivo geral}
 
-Este trabalho propõem um estudo de caso da aplicação do \textit{Docker} em aplicação corporativa analisando os aspectos
-de performance, segurança, isolamento, tempo de liberação compado maquinas virtuais.
+Este trabalho propõem um estudo de caso da aplicação do \textit{Docker} em aplicação corporativa analisando características
+não funcionais (performance, segurança, isolamento, tempo de liberação) compado com maquinas virtuais.
 
 \subsection{Objetivos específicos}\label{sec:objetivos_especificos}
 
@@ -104,15 +104,15 @@ Entre os objetivos específicos deste trabalho pode-se destacar:
 \section{Solução proposta}
 
 Este trabalho visa avaliar os beneficios de utilizar \textit{containers} \textit{Docker} como método de automatizar
-os ambientes ao invés do uso de maquinas virtuais. Esse trabalho difere-se de \textit{Performance comparison
-analysis of linux container and virtual machine for building cloud}\cite{Performance_container_vm}, pois expecificamente
+os ambientes ao invés do uso de maquinas virtuais. Esse trabalho difere-se da literatura de Kyoung-Taek Seo,
+H. Hwang, I Moon, O. Kwon and B. Kim\cite{Performance_container_vm}, pois expecificamente
 busca-se avaliar a redução de complexidade, desacoplamento dos componentes e a queda de uso de recursos do computador
 ao utilizar a abordagem de \textit{containers} como base de provisionamento do ambiente de uma aplicação corporativa.
 
-Os experimentos serão conduzidos através de um formulario com perguntas relacionadas a adoção de \textit{containers} por um time
+Os experimentos serão conduzidos através de um formulário com perguntas relacionadas a adoção de \textit{containers} por um time
 de desenvolvimento de \textit{software}, cujo adotou a utilização de \textit{Docker} com a finalidade de melhorar o processo de automação
 de ambientes de desenvolvimento, testes e produção. O questionário será aplicado a um time de pelo menos cinco desenvolvedores,
-as perguntas do forumalário estarão relacionadas a nivel de complexidade, tempo de resposta e recursos utilizados do computador
+as perguntas do formulário estarão relacionadas a nivel de complexidade, tempo de resposta e recursos utilizados do computador
 antes e após a adoção do \textit{Docker} no projeto.
 
 \section{Cronograma de desenvolvimento}\label{sec:cronograma}
@@ -121,7 +121,7 @@ antes e após a adoção do \textit{Docker} no projeto.
 
 A Tabela \ref{tab:cronograma1} apresenta o cronograma de desenvolvimento do trabalho conforme a numeração das atividades abaixo:
 \begin{enumerate}
-  \item Levantamento das variaveis que diferenciam utilização de maquinas virtuais e \textit{containers};
+  \item Levantamento das variáveis que diferenciam utilização de maquinas virtuais e \textit{containers};
   \item Elaboração do formulário com as perguntas relavantes com base no item acima;
   \item Validação do formulário elaborado com o orientador e desenvolvedores a fim de coletar feedbacks;
   \item Elaboração da versão final do formulário;
